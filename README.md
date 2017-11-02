@@ -21,3 +21,5 @@ Windows: [Installer](https://yarnpkg.com/en/docs/install#windows-tab)
 ### Installation
 
 `yarn`
+
+NOTE: This is a work in progress
