@@ -16,44 +16,9 @@ module.exports = function (options) {
       extensions: ['.json', '.js', '.css']
     },
 
-    module: {
+    module : {
       rules: [
         {
-          test: /.js?$/,
-          include: [path.resolve(__dirname, 'app')],
-          exclude: [path.resolve(__dirname, 'node_modules')],
-          loader: 'babel-loader',
-          query: {
-            presets: ['env']
-          }
-        }, {
-          test: /\.(scss)$/,
-          use: [
-            {
-              loader: 'style-loader', // inject CSS to page
-            }, {
-              loader: 'css-loader', // translates CSS into CommonJS modules
-            }, {
-              loader: 'postcss-loader', // Run post css actions
-              options: {
-                plugins: function () { // post css plugins, can be exported to postcss.config.js
-                  return [require('precss'), require('autoprefixer')];
-                }
-              }
-            }, {
-              loader: 'sass-loader' // compiles SASS to CSS
-            }
-          ]
-        }, {
-          test: /\.css?$/,
-          use: [
-            {
-              loader: 'style-loader', // inject CSS to page
-            }, {
-              loader: 'css-loader', // translates CSS into CommonJS modules
-            }
-          ]
-        }, {
           test: /\.(woff|woff2|eot|ttf|otf)$/,
           use: ['file-loader']
         }, {
