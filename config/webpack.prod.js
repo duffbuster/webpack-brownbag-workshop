@@ -3,6 +3,8 @@ const commonConfig = require('./webpack.common.js');
 const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const InlineManifestWebpackPlugin = require('inline-manifest-webpack-plugin');
+const CommonsChunkPlugin = require('webpack').optimize.CommonsChunkPlugin;
 
 const ENV = process.env.NODE_ENV = process.env.ENV = 'production';
 const HOST = process.env.HOST || 'localhost';
@@ -25,7 +27,7 @@ module.exports = function (options) {
        *
        * See: http://webpack.github.io/docs/configuration.html#output-path
        */
-      path: path.resolve(__dirname, 'dist'),
+      path: path.resolve(__dirname, '../dist'),
 
       publicPath: '',
 
@@ -64,8 +66,7 @@ module.exports = function (options) {
           use: ExtractTextPlugin.extract({
             fallback: 'style-loader',
             use: 'css-loader'
-          }),
-          include: [ helpers.root('src', 'styles') ]
+          })
         },
 
         /**
@@ -76,8 +77,7 @@ module.exports = function (options) {
           use: ExtractTextPlugin.extract({
             fallback: 'style-loader',
             use: [ 'css-loader', 'sass-loader' ]
-          }),
-          include: [ helpers.root('src', 'styles') ]
+          })
         }
       ]
     },
@@ -113,7 +113,7 @@ module.exports = function (options) {
             beautify: false, // debug true
           }
         }
-      }),
+      })
     ],
 
   });

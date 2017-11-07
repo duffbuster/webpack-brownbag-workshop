@@ -13,7 +13,7 @@ module.exports = function (options) {
     },
 
     resolve: {
-      extensions: ['.json', '.js', '.css']
+      extensions: [ '.json', '.js', '.css', '.scss' ]
     },
 
     module : {
@@ -29,14 +29,12 @@ module.exports = function (options) {
     },
 
     plugins: [
-      // TODO: Add the CleanWebpackPlugin
-      // new CleanWebpackPlugin(['./dist']),
+      new CleanWebpackPlugin(['./dist']),
 
-      // TODO: Add the HtmlWebpackPlugin
-      // new HtmlWebpackPlugin({
-      //   title: 'Webpack Brownbag',
-      //   template: path.resolve(__dirname, 'app/index.html')
-      // }),
+      new HtmlWebpackPlugin({
+        title: 'Webpack Brownbag',
+        template: path.resolve(__dirname, '../app/index.html')
+      }),
 
       /**
        * Provide jQuery for Bootstrap
