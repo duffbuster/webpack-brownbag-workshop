@@ -16,6 +16,7 @@ const HMR = process.argv.join('').indexOf('hot') > -1;
 const HOST = process.env.HOST || 'localhost';
 const PORT = process.env.PORT || 3000;
 const PUBLIC = process.env.PUBLIC_DEV || HOST + ':' + PORT;
+
 const METADATA = {
   host: HOST,
   port: PORT,

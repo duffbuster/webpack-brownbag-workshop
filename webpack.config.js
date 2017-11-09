@@ -95,11 +95,11 @@ module.exports = {
     /**
      * Provide jQuery for Bootstrap
      */
-    // new ProvidePlugin({
-    //   $: 'jquery',
-    //   jQuery: 'jquery',
-    //   'window.jQuery': 'jquery',
-    //   Popper: [ 'popper.js', 'default' ]
-    // })
+    new ProvidePlugin({
+      $: 'jquery',
+      jQuery: 'jquery',
+      'window.jQuery': 'jquery',
+      Popper: [ 'popper.js', 'default' ]
+    })
   ]
 }

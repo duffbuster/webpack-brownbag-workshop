@@ -14,10 +14,6 @@ MacOs: `brew install yarn`
 
 Windows: [Installer](https://yarnpkg.com/en/docs/install#windows-tab)
 
-* Install Typescript
-
-`npm install --global typescript`
-
 ### Installation
 
 `yarn`

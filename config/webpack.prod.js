@@ -29,7 +29,7 @@ module.exports = function (options) {
        */
       path: path.resolve(__dirname, '../dist'),
 
-      publicPath: '',
+      publicPath: '', // optional
 
       /**
        * Specifies the name of each output file on disk.
